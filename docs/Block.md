@@ -1,0 +1,47 @@
+# Block
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**cycle** | **int** | Index of the cycle | [optional] 
+**level** | **int** | Height of the block from the genesis | [optional] 
+**hash** | **str** | Block hash | [optional] 
+**timestamp** | **datetime** | Datetime at which the block is claimed to have been created (ISO 8601, e.g. &#x60;2020-02-20T02:40:57Z&#x60;) | [optional] 
+**proto** | **int** | Protocol code, representing a number of protocol changes since genesis (mod 256, but &#x60;-1&#x60; for the genesis block) | [optional] 
+**payload_round** | **int** | Round at which the block payload was proposed | [optional] 
+**block_round** | **int** | Round at which the block was produced | [optional] 
+**validations** | **int** | Number of endorsements (slots), included into the block | [optional] 
+**deposit** | **int** | Security deposit frozen on the baker&#x27;s account for producing the block (micro tez) | [optional] 
+**reward** | **int** | Fixed reward paid to the payload proposer (micro tez) | [optional] 
+**bonus** | **int** | Bonus reward paid to the block producer (micro tez) | [optional] 
+**fees** | **int** | Total fee gathered from operations, included into the block | [optional] 
+**nonce_revealed** | **bool** | Status of the seed nonce revelation &#x60;true&#x60; - seed nonce revealed &#x60;false&#x60; - there&#x27;s no &#x60;seed_nonce_hash&#x60; in the block or seed nonce revelation has missed | [optional] 
+**proposer** | **OneOfBlockProposer** | Baker who proposed the block payload | [optional] 
+**producer** | **OneOfBlockProducer** | Baker who produced the block | [optional] 
+**software** | **OneOfBlockSoftware** | Information about baker&#x27;s software | [optional] 
+**lb_escape_vote** | **bool** | Flag indicating that the baker has voted for disabling liquidity baking | [optional] 
+**lb_escape_ema** | **int** | Liquidity baking escape EMA value with precision of 1000 for integer computation | [optional] 
+**endorsements** | [**list[EndorsementOperation]**](EndorsementOperation.md) | List of endorsement (is operation, which specifies the head of the chain as seen by the endorser of a given slot) operations, included in the block | [optional] 
+**preendorsements** | [**list[PreendorsementOperation]**](PreendorsementOperation.md) | List of preendorsement operations, included in the block | [optional] 
+**proposals** | [**list[ProposalOperation]**](ProposalOperation.md) | List of proposal (is used by bakers (delegates) to submit and/or upvote proposals to amend the protocol) operations, included in the block | [optional] 
+**ballots** | [**list[BallotOperation]**](BallotOperation.md) | List of ballot (is used to vote for a proposal in a given voting cycle) operations, included in the block | [optional] 
+**activations** | [**list[ActivationOperation]**](ActivationOperation.md) | List of activation (is used to activate accounts that were recommended allocations of tezos tokens for donations to the Tezos Foundation’s fundraiser) operations, included in the block | [optional] 
+**double_baking** | [**list[DoubleBakingOperation]**](DoubleBakingOperation.md) | List of double baking evidence (is used by bakers to provide evidence of double baking (baking two different blocks at the same height) by a baker) operations, included in the block | [optional] 
+**double_endorsing** | [**list[DoubleEndorsingOperation]**](DoubleEndorsingOperation.md) | List of double endorsement evidence (is used by bakers to provide evidence of double endorsement (endorsing two different blocks at the same block height) by a baker) operations, included in the block | [optional] 
+**double_preendorsing** | [**list[DoublePreendorsingOperation]**](DoublePreendorsingOperation.md) | List of double preendorsement evidence operations, included in the block | [optional] 
+**nonce_revelations** | [**list[NonceRevelationOperation]**](NonceRevelationOperation.md) | List of nonce revelation (are used by the blockchain to create randomness) operations, included in the block | [optional] 
+**delegations** | [**list[DelegationOperation]**](DelegationOperation.md) | List of delegation (is used to delegate funds to a delegate (an implicit account registered as a baker)) operations, included in the block | [optional] 
+**originations** | [**list[OriginationOperation]**](OriginationOperation.md) | List of origination (deployment / contract creation ) operations, included in the block | [optional] 
+**transactions** | [**list[TransactionOperation]**](TransactionOperation.md) | List of transaction (is a standard operation used to transfer tezos tokens to an account) operations, included in the block | [optional] 
+**reveals** | [**list[RevealOperation]**](RevealOperation.md) | List of reveal (is used to reveal the public key associated with an account) operations, included in the block | [optional] 
+**register_constants** | [**list[RegisterConstantOperation]**](RegisterConstantOperation.md) | List of register global constant operations, included in the block | [optional] 
+**set_deposits_limits** | [**list[SetDepositsLimitOperation]**](SetDepositsLimitOperation.md) | List of set deposits limit operations, included in the block | [optional] 
+**migrations** | [**list[MigrationOperation]**](MigrationOperation.md) | List of migration operations, implicitly applied at the end of the block | [optional] 
+**revelation_penalties** | [**list[RevelationPenaltyOperation]**](RevelationPenaltyOperation.md) | List of revelation penalty operations, implicitly applied at the end of the block | [optional] 
+**endorsing_rewards** | [**list[EndorsingRewardOperation]**](EndorsingRewardOperation.md) | List of endorsing rewards, implicitly applied at the end of the block | [optional] 
+**quote** | **OneOfBlockQuote** | Injected historical quote at the time of block | [optional] 
+**priority** | **int** | [DEPRECATED] | [optional] 
+**baker** | **OneOfBlockBaker** | [DEPRECATED] | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

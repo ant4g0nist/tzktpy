@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import swagger_client
+from swagger_client.rest import ApiException
+from swagger_client.configuration import Configuration
+
+
+configuration = Configuration()
+# configuration.proxy="http://localhost:8080"
+# configuration.verify_ssl=False
+
+api_instance = swagger_client.AccountsApi(swagger_client.ApiClient(configuration))
+
+api_response = api_instance.accounts_get(limit=100)
+
